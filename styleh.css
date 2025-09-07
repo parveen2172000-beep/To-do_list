@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
 .container {
     width: 100%;
     min-height: 100vh;
@@ -11,7 +12,8 @@
     background: linear-gradient(136deg, #153677, #4e085f);
     padding: 10px;
 }
-.todo-app{
+
+.todo-app {
     width: 100%;
     max-width: 540px;
     background: white;
@@ -19,17 +21,23 @@
     padding: 40px 30px 70px;
     border-radius: 10px;
 }
+
 .todo-app h2 {
     color: #002765;
     display: flex;
     margin-bottom: 20px;
     align-items: center;
+    font-size: 28px;
+    flex-wrap: wrap;
+    text-align: center;
 }
-.todo-app h2 img{
+
+.todo-app h2 img {
     width: 30px;
     margin-left: 10px;
 }
-.row{
+
+.row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,15 +45,19 @@
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
+    gap: 8px;
 }
-input{
+
+input {
     flex: 1;
     border: none;
     outline: none;
     background: transparent;
     padding: 10px;
+    font-size: 16px;
 }
-button{
+
+button {
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -54,8 +66,14 @@ button{
     font-size: 16px;
     border-radius: 40px;
     cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
-ul li{
+
+button:hover {
+    opacity: 0.9;
+}
+
+ul li {
     list-style: none;
     font-size: 17px;
     padding: 12px 8px 12px 50px;
@@ -63,7 +81,8 @@ ul li{
     cursor: pointer;
     position: relative;
 }
-ul li::before{
+
+ul li::before {
     content: '';
     position: absolute;
     height: 28px;
@@ -75,17 +94,20 @@ ul li::before{
     top: 12px;
     left: 8px;
 }
-ul li.checked{
+
+ul li.checked {
     color: #555;
     text-decoration: line-through;
 }
-ul li.checked::before{
+
+ul li.checked::before {
     background-image: url("images/checked.png");
 }
+
 ul li span {
     position: absolute;
     right: 0;
-    top : 5px;
+    top: 5px;
     width: 40px;
     height: 40px;
     font-size: 22px;
@@ -94,6 +116,57 @@ ul li span {
     text-align: center;
     border-radius: 50%;
 }
-ul li span:hover{
+
+ul li span:hover {
     background: #edeef0;
+}
+
+/* 🔽 RESPONSIVE DESIGN STARTS HERE 🔽 */
+@media (max-width: 768px) {
+    .todo-app {
+        margin: 50px 10px;
+        padding: 25px 15px 50px;
+    }
+
+    .todo-app h2 {
+        font-size: 22px;
+        justify-content: center;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+        padding-left: 10px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    ul li {
+        font-size: 15px;
+        padding: 10px 8px 10px 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-app {
+        margin: 20px 5px;
+    }
+
+    .todo-app h2 img {
+        width: 24px;
+    }
+
+    button {
+        font-size: 13px;
+    }
 }
